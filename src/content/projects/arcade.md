@@ -1,10 +1,10 @@
 ---
 title: Arcade
 summary: >-
-  A personal, ad-free games hub for Android — one app that hosts classic games
-  like Minesweeper, with more (Sudoku, 2048, …) designed to drop in later.
+  A personal, ad-free games hub for Android — one app hosting several games
+  (Minesweeper, a Jetpack side-scroller) with more designed to drop in later.
 tags: ["Android", "Kotlin", "Jetpack Compose", "Room"]
-status: Scaffold
+status: In progress
 repo: https://github.com/markbtagg/arcade
 order: 20
 ---
