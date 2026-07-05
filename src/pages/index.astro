@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const year = 2026;
+---
+
+<Base>
+  <header class="hero wrap">
+    <h1>Things I build.</h1>
+    <p>
+      A collection of apps and tools I've made — Android apps, browser tools, and
+      little utilities. Mostly for my family and myself.
+    </p>
+  </header>
+
+  <main class="wrap">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <span class="count">{projects.length} projects</span>
+    </div>
+
+    <section class="grid">
+      {
+        projects.map((p) => (
+          <ProjectCard
+            title={p.data.title}
+            summary={p.data.summary}
+            tags={p.data.tags}
+            status={p.data.status}
+            repo={p.data.repo}
+          />
+        ))
+      }
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">© {year} Mark Tagg · taggfamily.ca</div>
+  </footer>
+</Base>
